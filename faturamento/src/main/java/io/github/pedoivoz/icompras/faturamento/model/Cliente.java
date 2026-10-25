@@ -1,4 +1,11 @@
 package io.github.pedoivoz.icompras.faturamento.model;
 
-public record Cliente() {
+public record Cliente(
+        String nome,
+        String cpf,
+        String logradouro,
+        String numero,
+        String bairro,
+        String email,
+        String telefone) {
 }

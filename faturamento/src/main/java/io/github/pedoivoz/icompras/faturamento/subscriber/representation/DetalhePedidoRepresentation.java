@@ -1,6 +1,6 @@
-package io.github.pedroivoz.icompras.pedidos.publisher.representation;
+package io.github.pedoivoz.icompras.faturamento.subscriber.representation;
 
-import io.github.pedroivoz.icompras.pedidos.model.enums.StatusPedido;
+
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -17,7 +17,6 @@ public record DetalhePedidoRepresentation (
         String telefone,
         String dataPedido,
         BigDecimal total,
-        StatusPedido status,
         List<DetalheItemPedidoRepresentation> itens
 ){
 }

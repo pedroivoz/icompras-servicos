@@ -1,4 +1,4 @@
-package io.github.pedroivoz.icompras.pedidos.subscriber;
+package io.github.pedroivoz.icompras.pedidos.subscriber.representation;
 
 import io.github.pedroivoz.icompras.pedidos.model.enums.StatusPedido;
 

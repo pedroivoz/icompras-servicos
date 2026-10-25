@@ -1,6 +1,5 @@
-package io.github.pedoivoz.icompras.faturamento;
+package io.github.pedoivoz.icompras.faturamento.bucket;
 
-import io.minio.MinioClient;
 import org.springframework.http.MediaType;
 
 import java.io.InputStream;

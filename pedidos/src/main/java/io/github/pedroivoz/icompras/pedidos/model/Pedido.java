@@ -1,5 +1,6 @@
 package io.github.pedroivoz.icompras.pedidos.model;
 
+import io.github.pedroivoz.icompras.pedidos.client.representation.ClienteRepresentation;
 import io.github.pedroivoz.icompras.pedidos.model.enums.StatusPedido;
 import jakarta.persistence.*;
 import lombok.*;
@@ -49,4 +50,7 @@ public class Pedido {
 
     @OneToMany(mappedBy = "pedido")
     private List<ItemPedido> itens;
+
+    @Transient
+    private ClienteRepresentation dadosCliente;
 }

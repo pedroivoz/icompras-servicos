@@ -1,5 +1,5 @@
 package io.github.pedoivoz.icompras.faturamento.publisher.representation;
 
-public record AtualizacaoStatusPagamento(
+public record AtualizacaoStatusPedido(
         Long codigo, StatusPedido status, String urlNotaFiscal) {
 }

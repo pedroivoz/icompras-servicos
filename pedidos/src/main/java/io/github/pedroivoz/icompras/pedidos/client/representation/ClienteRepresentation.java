@@ -4,7 +4,7 @@ public record ClienteRepresentation(
         Long codigo,
         String nome,
         String cpf,
-        String Logradouro,
+        String logradouro,
         String numero,
         String bairro,
         String email,

@@ -1,4 +1,4 @@
-package io.github.pedoivoz.icompras.faturamento.props;
+package io.github.pedoivoz.icompras.faturamento.config.props;
 
 
 import lombok.Data;
