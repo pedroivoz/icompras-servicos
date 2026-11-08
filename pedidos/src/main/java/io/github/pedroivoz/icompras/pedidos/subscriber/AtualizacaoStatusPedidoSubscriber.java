@@ -3,6 +3,7 @@ package io.github.pedroivoz.icompras.pedidos.subscriber;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.pedroivoz.icompras.pedidos.repository.PedidoRepository;
 import io.github.pedroivoz.icompras.pedidos.service.AtualizacaoStatusPedidoService;
+import io.github.pedroivoz.icompras.pedidos.subscriber.representation.AtualizacaoStatusPedidoRepresentation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -22,6 +23,21 @@ public class AtualizacaoStatusPedidoSubscriber {
     })
     public void receberAtualizacao(String json){
         log.info("Recebendo atualizacao: {}", json);
+
+        try {
+            var atualizacaoStatus =
+                    objectMapper.readValue(json, AtualizacaoStatusPedidoRepresentation.class);
+            service.atualizarStatus(
+                    atualizacaoStatus.codigo(),
+                    atualizacaoStatus.status(),
+                    atualizacaoStatus.urlNotaFiscal(),
+                    atualizacaoStatus.codigoRastreio()
+            );
+            log.info("Pedido atualizado com sucesso!");
+
+        } catch (Exception e){
+            log.error("Erro ao  status pedido: {}", e.getMessage());
+        }
 
 
     }
